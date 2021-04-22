@@ -1,0 +1,24 @@
+package com.woniuxy.basic.relearn;
+
+import java.util.Arrays;
+
+/**
+ * Arrays的使用:
+ *    1.对数组进行填充
+ *     1.1 对数组的所有数据进行填充
+ *     1.1 对数组的所有数据进行填充
+ *     1.2 对数组的部分数据进行填充
+ * 
+ * @author 小虫子的小日常
+ *
+ */
+public class ArraysTest {
+	public static void main(String[] args) {
+		// ArraysTest a = new ArraysTest();
+		int[] array = new int[5];
+		Arrays.fill(array, 1);
+		System.out.println(Arrays.toString(array));
+
+	}
+
+}

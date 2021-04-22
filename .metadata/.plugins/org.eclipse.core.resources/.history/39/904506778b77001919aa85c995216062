@@ -1,0 +1,22 @@
+package com.woniuxy.classobject.relearn;
+/**
+ * 批量屠龙刀，继承武器库
+ * 屠龙刀额外的行为：斩
+ * 屠龙刀绝招：扫遍天下无敌手
+ * @author 小虫子的小日常
+ *
+ */
+public class TuLongDao extends Weapon{
+
+	public TuLongDao(String name, int damage, String character) {
+		super(name, damage, character);
+	}
+	@Override
+		public void killShot() {
+			System.out.println("必杀技：长头发！！");
+		}
+	public void chop() {
+		System.out.println("砍哟");
+	}
+
+}

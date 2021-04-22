@@ -1,0 +1,14 @@
+package com.woniuxy.atm.ui;
+
+public class Test {
+	public static void main(String[] args) {
+		MainScreenUi m = new MainScreenUi();
+		while (true) {
+			
+				m.startMenu();
+				m.chooseBeforLongin();
+			
+
+		}
+	}
+}

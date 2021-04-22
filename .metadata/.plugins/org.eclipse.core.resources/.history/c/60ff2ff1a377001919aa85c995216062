@@ -1,0 +1,102 @@
+package com.woniuxy.classobject.relearn;
+
+import java.util.Scanner;
+
+public class Test {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Test t = new Test();
+		//t.personTest();
+		
+		//t.motorVihiclesTest();
+	//	t.carTest();
+		//t.personDTest();
+		//t.hospitalTest();
+		//t.aircraftTest();
+	//	t.weaponTest();
+		t.roleTest();
+		sc.close();
+	}
+//Person测试
+	public void personTest() {
+
+		Person p1 = new Person("mona", 20, 'M');
+		Person p2 = new Person("momo", 21, 'F');
+		p1.nationality = "China";
+		p1.showMe();
+		p2.showMe();
+
+	}
+	//MotorVihicles测试
+	public void motorVihiclesTest() {
+		MotorVehicles m1 = new MotorVehicles();
+		m1.changeLicense();
+		m1.accelerate();
+		MotorVehicles m2 = new MotorVehicles("辽B5086", 150	, 200);
+		m2.decelerate();
+		m1.show();
+		m2.show();
+	}
+	//Car,ParkingLot测试
+	public void carTest() {
+		Car car1 = new Car("无bug祈福车");
+		Car car2 = new Car("有bug能搞定祈福车");
+		car1.park();
+		car2.park();
+		car1.leave();
+	}
+	//PersonD,Student,Staff测试
+	public void personDTest() {
+		Student student = new Student("momoko", 10, '女', "cd001","实验外国语学校");
+		Staff staff = new Staff("mona", 30, '女', "英语老师", 10000);
+		student.doHomework();
+		student.eat();
+		staff.eat();
+		staff.sleep();
+		staff.getWage();
+	}
+	//Hospital、Patient测试
+	public void hospitalTest() {
+		Patient p1 = new Patient("mona", 10, '女');
+		Patient p2 = new Patient("momo", 11, '女');
+		Patient p3 = new Patient("nikita", 13, '女');
+		p1.getBed();
+		p2.getBed();
+		p3.getBed();
+		p1.returnBed();
+		p3.returnBed();
+		p1.getBed();
+		p3.getBed();
+	}
+	//Aircraft、Warcraft、Helicopter测试
+	public void aircraftTest() {
+		Warcraft w = new Warcraft("战斗机", 100, "超级强的那一版", 5);
+		Helicopter h = new Helicopter("直升机", 30, "不会晕的小舒服", 4);
+		w.attack();
+		
+	}
+	//Weapon测试
+	public void weaponTest() {
+		TuLongDao t = new TuLongDao("小屠龙", 999, "用了不脱发哟");
+		YiTianJian y = new YiTianJian("倚天剑", 1000, "用了。。会变尼姑哟");
+		DaGouGun d = new DaGouGun("打狗棍", 1001, "打一下，包包里面少五毛");
+		t.show();
+		y.show();
+		d.show();
+		t.killShot();
+		y.killShot();
+		d.killShot();
+	}
+	//Role、Soldier、Enchanter、Archer测试
+	public void roleTest() {
+		
+		Soldier s = new Soldier(100, 20, 1000,"士兵");
+		Enchanter e = new Enchanter(200, 30, 800,"魔法师");
+		Archer a = new Archer(200, 40, 900,"射手");
+		
+		s.attack(e);
+		e.attack(s);
+		
+	}
+
+}

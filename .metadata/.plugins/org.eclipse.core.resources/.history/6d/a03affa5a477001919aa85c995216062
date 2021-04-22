@@ -1,0 +1,41 @@
+package com.woniuxy.classobject.relearn;
+
+import java.util.Scanner;
+
+/**
+ * 魔法师以魔法球攻击，以屏障作为防御
+ * 
+ * @author 小虫子的小日常
+ *
+ */
+public class Enchanter extends Role {
+	
+Scanner sc = new Scanner(System.in);
+	
+	
+	public Enchanter(String name) {
+		super(name);
+		double luckyNumber = Math.random();
+		if(luckyNumber>=0.9) {
+			this.attackPower = sc.nextInt();
+			this.defensivePower = sc.nextInt();
+			this.physicalPower = sc.nextInt();
+		}
+		if(luckyNumber>=0.5) {
+			this.attackPower = 200;
+			this.defensivePower = 160;
+			this.physicalPower = 1000;
+		}
+	}
+
+	@Override
+	public void attack(Role enemy) {
+		System.out.println(this.name+"用魔法球攻击了" + enemy.name + "造成" + attackPower + "点伤害");
+	}
+
+	@Override
+	public void defense(Role enemy) {
+		System.out.println(this.name+"用屏障防守，抵御了" + enemy.name + defensivePower + "点伤害");
+	}
+
+}

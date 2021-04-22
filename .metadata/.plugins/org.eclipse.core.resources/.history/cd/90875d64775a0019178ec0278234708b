@@ -1,0 +1,15 @@
+package com.woniuxy.java.basic;
+import java.util.Scanner;//1.导包
+public class FirstClass {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);//2.创建Scanner的对象（固定格式）
+		System.out.println("请输入你的姓名、年龄、家乡");
+		String name = sc.next();//3.使用Scanner的对象去调用Scanner类所提供的方法
+		String age = sc.next();
+		String place = sc.next();
+		System.out.println(name + age + place);
+		sc.close();//4.关闭Scanner
+	}
+
+}

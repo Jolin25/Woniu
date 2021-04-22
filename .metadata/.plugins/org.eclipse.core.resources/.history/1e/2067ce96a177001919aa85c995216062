@@ -1,0 +1,27 @@
+package com.woniuxy.classobject.relearn;
+
+/**
+ * 魔法师以魔法球攻击，以屏障作为防御
+ * 
+ * @author 小虫子的小日常
+ *
+ */
+public class Enchanter extends Role {
+	String name;
+
+	public Enchanter(int attackPower, int defensivePower, int physicalPower, String name) {
+		super(attackPower, defensivePower, physicalPower);
+		this.name = name;
+	}
+
+	@Override
+	public void attack(Role enemy) {
+		System.out.println("用魔法球攻击了" + enemy + "造成" + attackPower + "点伤害");
+	}
+
+	@Override
+	public void defense(Role enemy) {
+		System.out.println("用屏障防守，抵御了" + enemy + defensivePower + "点伤害");
+	}
+
+}

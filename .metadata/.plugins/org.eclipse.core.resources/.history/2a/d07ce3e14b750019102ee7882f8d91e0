@@ -1,0 +1,59 @@
+package com.woniuxy.basic.relearn;
+
+import java.util.Arrays;
+
+/**
+ * Arrays的使用:
+ *  1.对数组进行填充 
+ *  	1.1 对数组的所有数据进行填充  fill(数组名，要填充的数据);
+ *  	1.2 对数组的部分数据进行填充fill(数组名，开始位置，结束位置，要填充的数据);
+ * 	2.对数组进行排序
+ * 		sort(数组名)；
+ * 	3.判断两个数组是否相等
+ * 		含义：长度一致&&每个位置上的数据都一样
+ * 		
+ * 	
+ * @author 小虫子的小日常
+ *
+ */
+public class ArraysTest {
+	public static void main(String[] args) {
+		/*
+		 *  对数组进行填充
+		 */
+		int[] array = new int[5];
+		int[] arrayComparision = {2,2,3,1,3};
+		// 全填充
+		Arrays.fill(array, 1);
+		System.out.println(Arrays.toString(array));
+		//部分填充
+		Arrays.fill(array, 2, 4, 2);
+		System.out.println(Arrays.toString(array));
+		/*
+		 * 对数组进行排序
+		 */
+		Arrays.sort(array);//内部使用双轴快排，实现升序
+		System.out.println(Arrays.toString(array));
+		/*
+		 * 两个数组是否相等
+		 */
+		boolean flagContent = true;
+		if(array.length==arrayComparision.length) {//length
+			for(int i = 0;i<array.length;i++) {
+				if(array[i]!=arrayComparision[i]) {
+					flagContent = false;
+				}
+			}
+			if(flagContent) {
+				System.out.println("数组相等");
+			}else {
+				System.out.println("内容不相等");
+			}
+			
+		}else {
+			System.out.println("长度不相等");
+		}
+		
+	}
+
+}

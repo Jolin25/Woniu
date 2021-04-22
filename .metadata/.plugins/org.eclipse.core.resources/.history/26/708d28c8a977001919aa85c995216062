@@ -1,0 +1,56 @@
+package com.woniuxy.classobject.relearn;
+
+import java.util.Scanner;
+
+/**
+ * 士兵以矛攻击，以盾防御
+ * 
+ * @author 小虫子的小日常
+ *
+ */
+public class Soldier extends Role {
+	Scanner sc = new Scanner(System.in);
+
+	public Soldier(String name) {
+		super(name);
+		double luckyNumber = Math.random();
+		if (luckyNumber >= 0.9) {
+			System.out.println("恭喜！该角色可以自己赋属性值！");
+			System.out.println("请输入攻击力：");
+			this.attackPower = sc.nextInt();
+			System.out.println("请输入防御力：");
+			this.defensivePower = sc.nextInt();
+			System.out.println("请输入体力：");
+			this.physicalPower = sc.nextInt();
+			System.out.println("恭喜获得超级士兵！");
+		} else if (luckyNumber >= 0.5) {
+			System.out.println("恭喜获得升级版士兵！");
+			this.attackPower = 200;
+			this.defensivePower = 160;
+			this.physicalPower = 1000;
+		} else {
+			System.out.println("获得普通士兵一枚");
+		}
+	}
+
+	@Override
+	public void attack(Role enemy) {
+		if (this.physicalPower > 0) {
+			System.out.println(this.name + "用矛攻击了" + enemy.name + "造成" + attackPower + "点伤害");
+			enemy.physicalPower -= this.attackPower;
+			if (enemy.physicalPower <= 0) {
+
+				System.out.println("=======" + enemy.name + "阵亡=======");
+			}
+		}else {
+			System.out.println(this.name+"已阵亡，无法攻击");
+		}
+	}
+
+	@Override
+	public void defense(Role enemy) {
+		System.out.println(this.name + "用盾防守，抵御了" + enemy.name + defensivePower + "点伤害");
+
+	}
+
+}

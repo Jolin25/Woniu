@@ -1,0 +1,23 @@
+package com.woniuxy.classobject.relearn;
+/**
+ * 士兵以矛攻击，以盾防御
+ * @author 小虫子的小日常
+ *
+ */
+public class Soldier extends Role {
+	String name;
+	
+	public Soldier(int attackPower, int defensivePower, int physicalPower, String name) {
+		super(attackPower, defensivePower, physicalPower);
+		this.name = name;
+	}
+	@Override
+		public void attack(Role enemy) {
+			System.out.println("用矛攻击了"+enemy.name+"造成"+attackPower+"点伤害");
+		}
+	@Override
+		public void defense(Role enemy) {
+			System.out.println("用盾防守，抵御了"+enemy+defensivePower+"点伤害");
+		}
+
+}

@@ -1,0 +1,21 @@
+package com.woniuxy.classobject.relearn;
+/**
+ * 弓箭手以弓箭攻击，以宠物做肉盾为防御
+ * @author 小虫子的小日常
+ *
+ */
+public class Archer extends Role {
+	
+	public Archer(int attackPower, int defensivePower, int physicalPower, int name) {
+		super(attackPower, defensivePower, physicalPower, name);
+	}
+	@Override
+	public void attack(Role enemy) {
+		System.out.println("用弓箭攻击了"+enemy.name+"造成" + attackPower + "点伤害");
+	}
+	@Override
+	public void defense(Role enemy) {
+		System.out.println("用宠物防守，抵御了"+enemy.name+defensivePower+"点伤害");
+	}
+
+}

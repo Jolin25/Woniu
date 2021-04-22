@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;java.lang.learn.basic&apos; to &apos;com.java.lang.learn&apos;&#x0D;&#x0A;- Original project: &apos;YearBooks&apos;&#x0D;&#x0A;- Original element: &apos;YearBooks/src/java.lang.learn.basic&apos;&#x0D;&#x0A;- Renamed element: &apos;YearBooks/src/com.java.lang.learn&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;java.lang.learn.basic&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;java.lang.learn.basic" name="com.java.lang.learn" qualified="false" references="true" stamp="1558855446858" textual="false" version="1.0"/>
+</session>

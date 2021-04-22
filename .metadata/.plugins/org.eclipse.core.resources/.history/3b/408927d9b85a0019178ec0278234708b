@@ -1,0 +1,8 @@
+package com.woniuxy.java.basic;
+
+public class Text040904 {
+	public static void main(String[] args) {
+		long a = 24 * 24 * 60 * 1000 * 1000;
+		System.out.println(a);
+	}
+}

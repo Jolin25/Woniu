@@ -1,0 +1,26 @@
+package com.woniuxy.classobject.relearn;
+
+/**
+ * 属性：名字、伤害值、特点 
+ * 行为：输出信息
+ * 
+ * @author 小虫子的小日常
+ *
+ */
+public class Weapon {
+	public String name;
+	public int damage;
+	public String character;
+	public Weapon(String name, int damage, String character) {
+		this.name = name;
+		this.damage = damage;
+		this.character = character;
+	}
+	public void show() {
+		System.out.println(name+" 一刀："+damage+"  据说"+character);
+	}
+	public long killShot() {
+		System.out.println("据说是有个绝招的...");
+		return damage;
+	}
+}

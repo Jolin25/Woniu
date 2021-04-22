@@ -1,0 +1,24 @@
+package com.woniuxy.java.basic;
+
+import java.util.Scanner;
+
+public class Six {
+	public static void main(String[]args) {
+		System.out.println("请输入HTML的成绩：");
+		Scanner sc = new Scanner(System.in);
+		int htmlScore = sc.nextInt();
+		System.out.println("请输入JAVA的成绩：");
+		int javaScore = sc.nextInt();
+		System.out.println("请输入数据库的成绩：");
+		int dbScore = sc.nextInt();
+		System.out.println("HTML的成绩是：" + htmlScore);
+		System.out.println("JAVA的成绩是：" + javaScore);
+		System.out.println("数据库的成绩是：" + dbScore);
+		System.out.println("-------------------------");
+		System.out.println("HTML"+"    "+"JAVA"+"    "+"数据库");
+		System.out.println(htmlScore + "    "+javaScore+"    "+dbScore);
+		//需要将html与java之差用（）括起来，否则无法识别-
+		System.out.println("HTML与JAVA的分数之差：" + (htmlScore - javaScore));
+		System.out.println("三门课的平均成绩："+ (htmlScore+javaScore+dbScore)/3);
+	}
+}

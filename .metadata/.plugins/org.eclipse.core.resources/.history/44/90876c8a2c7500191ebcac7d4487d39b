@@ -1,0 +1,216 @@
+package com.woniuxy.basic.relearn;
+
+import java.util.Scanner;
+
+//语法基础
+public class GrammerDemo {
+	public static void main(String[] args) {
+		GrammerDemo g = new GrammerDemo();
+		// g.charToAscii();
+		// g.escapeCharacter();
+		// g.conversionOfDataType();
+		// g.charLearn();
+		// g.switchLearn();
+		// g.bitOperation();
+		//g.breakLableCirculation();
+		g.continueFlagCirculation();
+	}
+
+	/**
+	 * 文档注释哇，在该方法被调用的地方鼠标移过去会看到我哇
+	 * 
+	 * @author 小虫子的小日常
+	 */
+	// 获取字符的ascii码和charAt()的使用
+	public void charToAscii() {
+		System.out.println("input a char:");
+		Scanner sc = new Scanner(System.in);
+		char c1 = sc.next().charAt(0);
+		Integer i = Integer.valueOf(c1);// 也是获得的ascii码
+		int asciiC1 = c1;// 直接可以保存字符的ascii码
+		System.out.println(asciiC1);
+		System.out.println(c1);
+		System.out.println(i);
+		sc.close();
+	}
+
+	/**
+	 * @author 小虫子的小日常
+	 */
+	// 转义字符的使用
+	// Invalid escape sequence (valid ones are \b \t \n \f \r \" \' \\ )
+	public void escapeCharacter() {
+		System.out.println("what nationality are you?");
+		System.out.println("\nwhat nationality are you?");
+		System.out.println("\twhat nationality are you?");
+		System.out.println("\bwhat nationality are you?");
+		System.out.println("efwefwewe" + "\rwhat nationality are you?");
+		System.out.println("\'what nationality are you?");
+		System.out.println("\"what nationality are you?");
+		System.out.println("\\what nationality are you?");
+	}
+
+	// 数据类型的转换
+	public void conversionOfDataType() {
+
+		// 测试强转，感受以闭合环的形式去快速计算，而不是用原理强制截取二进制数的计算方式
+		byte b0 = (byte) 127;
+		byte b1 = (byte) 128;
+		byte b2 = (byte) 129;
+		byte b3 = (byte) 256;
+		byte b4 = (byte) 258;
+		System.out.println(b0);
+		System.out.println(b1);
+		System.out.println(b2);
+		System.out.println(b3);
+		System.out.println(b4);
+
+		// byte 和 char 进行数据计算
+		byte b = 10;
+		char c = 3;
+		char c2 = 51;
+		char c1 = '3';// ascii码为51
+		int a = 'a';
+		System.out.println(a);
+		System.out.println(c);
+		/*
+		 * 由此可以看出，char存放的是short类型的编号， 只是char型数据在显示的时候，不是显示这个编码数字， 而是根据这个编码找到字符点阵里面对应的点阵
+		 */
+		System.out.println(c2);
+		// System.out.println((int)c1);
+		// 分别转换成了int型才进行的运算
+		System.out.println("byte与char进行运算：" + b / c);
+		System.out.println("byte与char进行运算：" + c1 / b);
+
+		// int 和String之间的转换
+		int in1 = 12;
+		// 必须要用数字的形式哟，否则会报NumberFormatException错误的哈
+		String str1 = "120";
+		// int转换成String
+		String str2 = Integer.toString(in1);
+		System.out.println("int转换成String：" + str2);
+		String str3 = in1 + "";
+		System.out.println("int转换成String：" + str3);
+		String str4 = String.valueOf(in1);
+		System.out.println("int转换成String：" + str4);
+		// String转换成int
+		int in2 = Integer.valueOf(str1);
+		int in3 = Integer.parseInt(str1);
+		System.out.println("String转换成int：" + in2);
+		System.out.println("String转换成int：" + in3);
+
+		// 所有的基本数据类型都可以通过字符串拼接的形式转换成String数据类型
+		char bb1 = 51;
+		String str11 = bb1 + "";
+		System.out.println(str11);
+
+		double dd1 = 51;
+		String str12 = dd1 + "";
+		System.out.println(str12);
+
+		byte bb11 = 51;
+		String str13 = bb11 + "";
+		System.out.println(str13);
+
+		boolean bb111 = false;
+		String str14 = bb111 + "";
+		System.out.println(str14);
+	}
+
+	// 在判断条件下，char类型的体现
+	public void charLearn() {
+		char c1 = '0';// ascii码为48
+		boolean flag = c1 > 48;
+		boolean flag1 = c1 == 48;
+
+		System.out.println(flag);
+		System.out.println(flag1);
+	}
+
+	// switch(){}
+	public void switchLearn() {
+		switch ('3') {
+
+		}
+	}
+
+	// 位运算
+	public void bitOperation() {
+		// 对于低于int的数据类型，char、byte、short，会先转换成int类型了再进行位移运算
+		byte b001 = -5;
+		int in001 = -5 << 1;
+		// 所以移位运算没有改变其本身的值
+		// 左移在不损失有效位数字的丢失时，是乘以2的位移数次方
+		System.out.println(b001 + " " + in001);
+		// 所以对于int来说，位移数%32得到的数才是真的要位移的位数。
+		// 对于long来说，就是%64
+		int in002 = -5;
+		int in003 = in002 >> 32;
+		int in004 = in002 >> 33;
+		System.out.println(in003);
+		System.out.println(in004);
+	}
+
+	// break的用法:有标签的用法，可以用在所有的循环体上，直接跳出标签标志的循环体
+	public void breakLableCirculation() {
+		// for循环
+		Loop1: for (int i = 0; i < 10; i++) {// 标签名:循环
+			for (int j = 0; j < 3; j++) {
+				if (j == 2) {
+					break Loop1;// 直接跳出标签标记的循环
+				}
+				System.out.println("i:" + i + " j:" + j + " ");
+			}
+
+		}
+		System.out.println("===============");
+		// while循环
+		int i = 0;
+
+		Loop2: while (i < 5) {
+			int j = 0;//j要定义在外层循环的里面哦，不然内层循环结束一轮，j就已经是3不会再重置了
+			while (j < 3) {
+				if (i == 3 && j == 1) {
+					System.out.println("break:");
+					System.out.println("i:" + i + " j:" + j + " ");
+					break Loop2;
+				}
+				System.out.println("i:" + i + " j:" + j + " ");
+				j++;
+			}
+			i++;
+		}
+		System.out.println("==============");
+		//do while
+		int k = 0;
+		Loop3:do {
+			int j = 0;
+			do {
+				if(k==3&&j==2) {
+					System.out.println("break:");
+					System.out.println("k:" + k + " j:" + j + " ");
+					break Loop3;
+				}
+				System.out.println("k:" + k + " j:" + j + " ");
+				j++;
+			}while(j<3);//有分号哈
+			k++;
+		}while(k<10);//有分号哈
+	}
+	//continue的用法，有标签的用法，continue略过指定循环的剩下部分
+	public void continueFlagCirculation() {
+		Loop1:for(int i = 0;i<3;i++) {
+			for(int j = 0;j<3;j++) {
+				if(j==2) {
+					System.out.print("continue:");
+					System.out.println("i:" + i + " j:" + j + " ");
+					continue Loop1;
+				}
+				System.out.println("i:" + i + " j:" + j + " ");
+			}
+			System.out.println("外层i输出："+i);
+		}
+	}
+	
+	
+}

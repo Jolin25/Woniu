@@ -1,0 +1,38 @@
+package com.woniuxy.classobject.relearn;
+
+import java.util.Scanner;
+
+/**
+ * 弓箭手以弓箭攻击，以宠物做肉盾为防御
+ * @author 小虫子的小日常
+ *
+ */
+public class Archer extends Role {
+	
+Scanner sc = new Scanner(System.in);
+	
+	
+	public Archer(String name) {
+		super(name);
+		double luckyNumber = Math.random();
+		if(luckyNumber>=0.9) {
+			this.attackPower = sc.nextInt();
+			this.defensivePower = sc.nextInt();
+			this.physicalPower = sc.nextInt();
+		}
+		if(luckyNumber>=0.5) {
+			this.attackPower = 200;
+			this.defensivePower = 160;
+			this.physicalPower = 1000;
+		}
+	}
+	@Override
+	public void attack(Role enemy) {
+		System.out.println(this.name+"用弓箭攻击了"+enemy.name+"造成" + attackPower + "点伤害");
+	}
+	@Override
+	public void defense(Role enemy) {
+		System.out.println(this.name+"用宠物防守，抵御了"+enemy.name+defensivePower+"点伤害");
+	}
+
+}

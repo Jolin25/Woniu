@@ -1,0 +1,11 @@
+package com.woniuxy.java.basic;
+
+import java.util.Scanner;
+
+public class Six {
+	public static void main(String[]args) {
+		System.out.println("«Î ‰»ÎHTMLµƒ≥…º®£∫");
+		Scanner.sc = new Scanner(System.in);
+		
+	}
+}

@@ -1,0 +1,31 @@
+package com.woniuxy.classobject.relearn;
+/**
+ * 角色都有攻击力、防御力、体力等属性。都有攻击、防御等行为，
+ * @author 小虫子的小日常
+ *
+ */
+public class Role {
+	public int attackPower;
+	public int defensivePower;
+	public int physicalPower;
+	public String name;
+	{
+		attackPower = 100;
+		defensivePower = 80;
+		physicalPower = 500;
+	}
+	public Role(int attackPower, int defensivePower, int physicalPower, String name) {
+		
+		this.attackPower = attackPower;
+		this.defensivePower = defensivePower;
+		this.physicalPower = physicalPower;
+		this.name = name;
+	}
+	
+	public void attack(Role enemy) {
+		
+	}
+	public void defense(Role enemy) {
+		
+	}
+}

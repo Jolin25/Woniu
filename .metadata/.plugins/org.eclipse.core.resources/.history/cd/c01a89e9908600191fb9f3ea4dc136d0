@@ -1,0 +1,97 @@
+package com.woniu.tank.bullet;
+
+import com.woniu.tank.ui.GamePanel;
+
+/**
+ * 疑问版块：为什么子弹要单独建一个包呢？不可以放在map包里？ 子弹类：统一管理player的子弹和npc的子弹 1.属性：位置坐标：int x,int y
+ * 方向：int dir 类型：int type 2.行为：move(),boom()
+ * 当Player类中产生了Bullet实例并保存在bulletes集合中以后，从GamePanel类中的bulletes集合获得当前各个
+ * 子弹实例，以此不断进行移动行为和爆炸行为的设置，从而为GamePanel类的repaint方法提供更改点。
+ * 
+ * @author 小虫子的小日常
+ *
+ */
+public class Bullet implements Runnable {
+	private int x;// 横坐标
+	private int y;// 纵坐标
+	private int dir;// 方向
+	private int type;//类型：0为我方子弹 1为地方坦克
+	/*
+	 * 构造方法
+	 */
+
+	public Bullet(int x, int y, int dir,int type) {
+
+		this.x = x;
+		this.y = y;
+		this.dir = dir;
+		this.type = type;
+		new Thread(this).start();//开启线程
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			move();
+			boom();
+		}
+	}
+	/*
+	 * 移动行为：上右下左
+	 */
+
+	public void move() {
+		switch (dir) {
+		case 0:
+			setX(x--);
+			break;
+		case 1:
+			setY(y--);
+			break;
+		case 2:
+			setX(x++);
+			break;
+		case 3:
+			setY(y++);
+			break;
+		}
+	}
+
+	/*
+	 * 爆炸行为
+	 */
+	public void boom() {
+
+	}
+	public int getType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+	public int getDir() {
+		return dir;
+	}
+
+	public void setDir(int dir) {
+		this.dir = dir;
+	}
+
+}
